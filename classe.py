@@ -90,14 +90,16 @@ class Veiculo:
     def acelerar(self):
         if self.MudarMarcha:
             self.velocidade += 20
-            if self.velocidade >= 20:
+            if self.velocidade < 21:
               print(self.subirMarcha())
-            elif self.velocidade <= 60:
-                print(self.subirMarcha())
-            elif self.velocidade <= 80:
-                print(self.MudarMarcha())
-            elif self.velocidade < self.VelMaxima:
-                print(self.subirMarcha())
+            elif self.velocidade >= 40 and  self.velocidade < 60 and self.marcha < 2 :
+                    print(self.subirMarcha())
+            elif self.velocidade >  60 and  self.velocidade < 80 and self.marcha < 2:
+                          print(self.MudarMarcha())
+            elif self.velocidade <= 80 and self.marcha < 3:
+                          print(self.MudarMarcha())
+            elif self.velocidade < self.VelMaxima and self.velocidade >= 120:
+                      print(self.subirMarcha())
             return 'A velocidade esta em ' + str(self.velocidade)
         return ' O carro  precisa estar ligado para acelerar'
 
