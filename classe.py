@@ -76,12 +76,12 @@ class Veiculo:
         #-20         | Ré
         #0           | Neutro
         #20          | 1
-        #40          | 2
-        #60          | 2
-        #80          | 3
-        #100         | 4
-        #120         | 4
-        #140         | 5
+        # 40          | 2
+        # 60          | 2
+        # 80          | 3
+        # 100         | 4
+        # 120         | 4
+        # 140         | 5
         #Até a veloidade maxima 5
         #Somente podera acelerar/desacelerar com o veiculo ligado
         #não pode impactar no que ja esta funcionando [ex: ligar o carro na 3º marcha]
@@ -93,12 +93,14 @@ class Veiculo:
             if self.velocidade < 21:
               print(self.subirMarcha())
             elif self.velocidade >= 40 and  self.velocidade < 60 and self.marcha < 2 :
-                    print(self.subirMarcha())
-            elif self.velocidade >  60 and  self.velocidade < 80 and self.marcha < 2:
+                          print(self.subirMarcha())
+            elif self.velocidade >= 60 and  self.velocidade < 80 and self.marcha < 2:
                           print(self.MudarMarcha())
-            elif self.velocidade <= 80 and self.marcha < 3:
+            elif self.velocidade >= 80 and self.velocidade <= 100 and self.marcha < 4:
                           print(self.MudarMarcha())
-            elif self.velocidade < self.VelMaxima and self.velocidade >= 120:
+            elif self.velocidade >  100 and self.velocidade < 120 and self.marcha < 4:
+                          print(self.MudarMarcha())
+            elif self.velocidade < self.VelMaxima and self.velocidade >= 140 and self.marcha < 5:
                       print(self.subirMarcha())
             return 'A velocidade esta em ' + str(self.velocidade)
         return ' O carro  precisa estar ligado para acelerar'
